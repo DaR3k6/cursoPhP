@@ -12,7 +12,11 @@
 
 <body>
     <div class="container-fluid">
-        <h1 class="text-center">AGENDA DE CONTACTOS VERSIÓN 1.0</h1>
+        <div class="row">
+            <div class="row-10">
+                <h1 class="text-center">AGENDA DE CONTACTOS VERSIÓN 1.0</h1>
+            </div>
+        </div>
         <div class="row">
             <div class="col-6">
                 <form action="app/insertarContactos.php" method="POST">
@@ -66,8 +70,10 @@
                                 <td> <?php echo $valor[0]; ?> </td>
                                 <td> <?php echo $valor[1]; ?> </td>
                                 <td> <?php echo $valor[2]; ?> </td>
-                                <td><button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></td>
-                                <td><button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
+
+                                <td><a href="./frmEditar.php?id=<?php echo $valor[0]; ?>" type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></td>
+
+                                <td> <a href="./app/eliminarContacto.php?id=<?php echo $valor[0]; ?>" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></td>
 
                             </tr>
                         <?php } ?>
@@ -76,7 +82,26 @@
                 </table>
             </div>
         </div>
+
+
+        <div class="row mt-5">
+            <div class="col-6">
+                <p>
+                    APLICACION DE AGENDA <br>
+                    Version 1.0 <br>
+                    Cartago -2022
+                </p>
+            </div>
+            <div class="col-6">
+                Deserrollado por: <br>
+                Kevin Villegas
+            </div>
+        </div>
+
+
     </div>
+
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
